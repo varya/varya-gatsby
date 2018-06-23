@@ -3,7 +3,7 @@ module.exports = {
   shortSiteTitle: "HeroBlog - GatsbyJS starter", // <title> ending for posts and pages
   siteDescription: "HeroBlog is a GatsbyJS starter.",
   siteUrl: "https://gatsby-starter-hero-blog.greglobinski.com",
-  pathPrefix: "",
+  pathPrefix: "varya-gatsby",
   siteImage: "preview.jpg",
   siteLanguage: "en",
   // author
