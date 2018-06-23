@@ -1,0 +1,2 @@
+webpackJsonp([0x9b544cfa2a85],{742:function(a,s){a.exports={data:{page:{id:"/Users/varya/WebDev/Personal/varya-gatsby/content/pages/success/index.md absPath of file >>> MarkdownRemark",html:"<p>Thank you. <br />\nI will answer to your message as soon as possible.</p>",frontmatter:{title:"Success"}},site:{siteMetadata:{facebook:{appId:""}}}},pathContext:{slug:"/success/"}}}});
+//# sourceMappingURL=path---success-6625f5081f367f78fce1.js.map
