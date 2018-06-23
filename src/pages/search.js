@@ -28,7 +28,6 @@ const SearchPage = props => {
               <AlgoliaIcon />
             </div>
 
-            <Search algolia={algolia} theme={theme} />
           </Article>
         )}
       </ThemeContext.Consumer>
@@ -61,11 +60,6 @@ export const query = graphql`
   query SearchQuery {
     site {
       siteMetadata {
-        algolia {
-          appId
-          searchOnlyApiKey
-          indexName
-        }
         facebook {
           appId
         }
