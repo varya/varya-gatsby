@@ -9,9 +9,28 @@ const { createFilePath } = require(`gatsby-source-filesystem`);
 exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
   const { createNodeField } = boundActionCreators;
   if (node.internal.type === `MarkdownRemark`) {
-    const slug = createFilePath({ node, getNode, basePath: `pages` });
+    const fileNode = getNode(node.parent);
+    let slug = createFilePath({ node, getNode, basePath: `pages` });
+
     const separtorIndex = ~slug.indexOf("--") ? slug.indexOf("--") : 0;
     const shortSlugStart = separtorIndex ? separtorIndex + 2 : 0;
+
+    // only for posts
+    // TODO: only for old posts
+    if (fileNode.sourceInstanceName === 'posts') {
+
+      let paths = fileNode.relativePath.split('index_en.md');
+      if (paths[1] === '') {
+        slug = `en/posts/${paths[0]}`
+      }
+      paths = fileNode.relativePath.split('index_ru.md');
+      if (paths[1] === '') {
+        slug = `ru/posts/${paths[0]}`
+      }
+
+    }
+
+
     createNodeField({
       node,
       name: `slug`,
