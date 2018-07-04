@@ -6,7 +6,6 @@ const List = props => {
   const { edges, theme } = props;
 
   return (
-    <React.Fragment>
       <ul>
         {edges.map(edge => {
           const {
@@ -24,20 +23,6 @@ const List = props => {
         })}
       </ul>
 
-      {/* --- STYLES --- */}
-      <style jsx>{`
-        ul {
-          margin: ${theme.space.stack.m};
-          padding: ${theme.space.m};
-          list-style: circle;
-        }
-        li {
-          padding: ${theme.space.xs} 0;
-          font-size: ${theme.font.size.s};
-          line-height: ${theme.font.lineHeight.l};
-        }
-      `}</style>
-    </React.Fragment>
   );
 };
 

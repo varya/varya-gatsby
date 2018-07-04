@@ -20,9 +20,8 @@ const CategoryTemplate = props => {
   } = props;
 
   return (
-    <React.Fragment>
-      <ThemeContext.Consumer>
-        {theme => (
+    <div>
+      category template
           <Article theme={theme}>
             <header>
               <Headline theme={theme}>
@@ -39,11 +38,9 @@ const CategoryTemplate = props => {
               <List edges={edges} theme={theme} />
             </header>
           </Article>
-        )}
-      </ThemeContext.Consumer>
 
       <Seo facebook={facebook} />
-    </React.Fragment>
+     </div>
   );
 };
 

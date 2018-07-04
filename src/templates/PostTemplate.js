@@ -21,24 +21,20 @@ const PostTemplate = props => {
   } = props;
 
   return (
-    <React.Fragment>
-      <ThemeContext.Consumer>
-        {theme => (
-          <Article theme={theme}>
+      <div>
+          <Article>
             <Post
               post={post}
               next={next}
               prev={prev}
               authornote={authorNote}
               facebook={facebook}
-              theme={theme}
             />
           </Article>
         )}
-      </ThemeContext.Consumer>
 
       <Seo data={post} facebook={facebook} />
-    </React.Fragment>
+    </div>
   );
 };
 

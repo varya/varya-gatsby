@@ -84,40 +84,6 @@ const PostShare = props => {
         </div>
       </div>
 
-      {/* --- STYLES --- */}
-      <style jsx>{`
-        .share {
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-        }
-
-        .links {
-          display: flex;
-          flex-direction: row;
-
-          :global(.SocialMediaShareButton) {
-            margin: 0 0.8em;
-            cursor: pointer;
-          }
-        }
-
-        .label {
-          font-size: 1.2em;
-          margin: 0 1em 1em;
-        }
-
-        @from-width tablet {
-          .share {
-            flex-direction: row;
-            margin: ${theme.space.inset.l};
-          }
-          .label {
-            margin: ${theme.space.inline.m};
-          }
-        }
-      `}</style>
     </React.Fragment>
   );
 };
