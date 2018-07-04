@@ -42,37 +42,25 @@ const CategoryPage = props => {
   }
 
   return (
-    <React.Fragment>
-      <ThemeContext.Consumer>
-        {theme => (
-          <Article theme={theme}>
+      <div>
+      category page
+          <Article>
             <header>
-              <Headline title="Posts by categories" theme={theme} />
+              <Headline title="Posts by categories" />
             </header>
             {categoryList.map(item => (
               <section key={item[0]}>
                 <h2>
                   <FaTag /> {item[0]}
                 </h2>
-                <List edges={item[1]} theme={theme} />
+                <List edges={item[1]} />
               </section>
             ))}
-            {/* --- STYLES --- */}
-            <style jsx>{`
-              h2 {
-                margin: 0 0 0.5em;
-              }
-              h2 :global(svg) {
-                height: 0.8em;
-                fill: ${theme.color.brand.primary};
-              }
-            `}</style>
           </Article>
         )}
-      </ThemeContext.Consumer>
 
       <Seo facebook={facebook} />
-    </React.Fragment>
+    </div>
   );
 };
 

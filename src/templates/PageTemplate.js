@@ -4,7 +4,6 @@ import PropTypes from "prop-types";
 import Seo from "../components/Seo";
 import Article from "../components/Article";
 import Page from "../components/Page";
-import { ThemeContext } from "../layouts";
 
 const PageTemplate = props => {
   const {
@@ -17,17 +16,13 @@ const PageTemplate = props => {
   } = props;
 
   return (
-    <React.Fragment>
-      <ThemeContext.Consumer>
-        {theme => (
-          <Article theme={theme}>
-            <Page page={page} theme={theme} />
-          </Article>
-        )}
-      </ThemeContext.Consumer>
+    <div>
+      <Article>
+        <Page page={page} />
+      </Article>
 
       <Seo data={page} facebook={facebook} />
-    </React.Fragment>
+    </div>
   );
 };
 

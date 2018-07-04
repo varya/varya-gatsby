@@ -9,23 +9,21 @@ const Page = props => {
     page: {
       html,
       frontmatter: { title }
-    },
-    theme
+    }
   } = props;
 
   return (
-    <React.Fragment>
+    <div>
       <header>
-        <Headline title={title} theme={theme} />
+        <Headline title={title}/>
       </header>
-      <Bodytext html={html} theme={theme} />
-    </React.Fragment>
+      <Bodytext html={html}/>
+    </div>
   );
 };
 
 Page.propTypes = {
-  page: PropTypes.object.isRequired,
-  theme: PropTypes.object.isRequired
+  page: PropTypes.object.isRequired
 };
 
 export default Page;
