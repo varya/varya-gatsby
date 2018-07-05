@@ -5,7 +5,7 @@ import config from "../../../content/meta/config";
 import avatar from "../../images/jpg/avatar.jpg";
 
 const Author = props => {
-  const { note, theme } = props;
+  const { note } = props;
 
   return (
       <div className="author">
@@ -21,7 +21,6 @@ const Author = props => {
 
 Author.propTypes = {
   note: PropTypes.string.isRequired,
-  theme: PropTypes.object.isRequired
 };
 
 export default Author;

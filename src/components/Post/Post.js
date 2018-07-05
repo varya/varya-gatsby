@@ -1,6 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import "prismjs/themes/prism-okaidia.css";
 
 import asyncComponent from "../AsyncComponent";
 import Headline from "../Article/Headline";
@@ -30,21 +29,20 @@ const Post = props => {
     facebook,
     next: nextPost,
     prev: prevPost,
-    theme
   } = props;
 
   return (
     <React.Fragment>
       <header>
-        <Headline title={title} theme={theme} />
-        <Meta prefix={prefix} author={author} category={category} theme={theme} />
+        <Headline title={title} />
+        <Meta prefix={prefix} author={author} category={category} />
       </header>
-      <Bodytext html={html} theme={theme} />
+      <Bodytext html={html} />
       <footer>
-        <Share post={post} theme={theme} />
-        <Author note={authornote} theme={theme} />
-        <NextPrev next={nextPost} prev={prevPost} theme={theme} />
-        <Comments slug={slug} facebook={facebook} theme={theme} />
+        <Share post={post} />
+        <Author note={authornote} />
+        <NextPrev next={nextPost} prev={prevPost} />
+        <Comments slug={slug} facebook={facebook} />
       </footer>
     </React.Fragment>
   );
@@ -56,7 +54,6 @@ Post.propTypes = {
   facebook: PropTypes.object.isRequired,
   next: PropTypes.object,
   prev: PropTypes.object,
-  theme: PropTypes.object.isRequired
 };
 
 export default Post;

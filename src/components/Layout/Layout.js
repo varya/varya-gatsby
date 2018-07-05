@@ -3,10 +3,11 @@ import styled from 'styled-components'
 import { grid } from 'styled-components-grid'
 import breakpoint from 'styled-components-breakpoint'
 
-const Container = styled.div`
+export const Container = styled.div`
   ${grid({})}
 `
-const LeftSide = styled.div`
+
+export const LeftSide = styled.div`
   ${grid.unit({
     size: {
         desktop: 1 / 12
@@ -18,9 +19,8 @@ const LeftSide = styled.div`
   ${breakpoint('desktop') `
     order: 1;
   `}
-  background: red;
 `
-const Content = styled.div`
+export const Content = styled.div`
   ${grid.unit({
     size: {
         tablet: 8 / 12,
@@ -33,9 +33,8 @@ const Content = styled.div`
   ${breakpoint('desktop') `
     order: 2;
   `}
-  background: green;
 `
-const RightSide = styled.div`
+export const RightSide = styled.div`
   ${grid.unit({
     size: {
         tablet: 4 / 12,
@@ -48,7 +47,6 @@ const RightSide = styled.div`
   ${breakpoint('desktop') `
     order: 3;
   `}
-  background: yellow;
 `
 
 export default class Layout extends Component {

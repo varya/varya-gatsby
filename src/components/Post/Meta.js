@@ -7,7 +7,7 @@ import FaUser from "react-icons/lib/fa/user";
 import FaTag from "react-icons/lib/fa/tag";
 
 const Meta = props => {
-  const { prefix, author: authorName, category, theme } = props;
+  const { prefix, author: authorName, category } = props;
 
   return (
     <p className="meta">
@@ -32,7 +32,6 @@ Meta.propTypes = {
   prefix: PropTypes.string.isRequired,
   author: PropTypes.string.isRequired,
   category: PropTypes.string,
-  theme: PropTypes.object.isRequired
 };
 
 export default Meta;

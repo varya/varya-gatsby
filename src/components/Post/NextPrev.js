@@ -7,7 +7,6 @@ import FaArrowLeft from "react-icons/lib/fa/arrow-left";
 
 const NextPrev = props => {
   const {
-    theme,
     next: {
       fields: { prefix: nextPrefix, slug: nextSlug } = {},
       frontmatter: { title: nextTitle } = {}
@@ -44,7 +43,6 @@ const NextPrev = props => {
 NextPrev.propTypes = {
   next: PropTypes.object,
   prev: PropTypes.object,
-  theme: PropTypes.object.isRequired
 };
 
 export default NextPrev;

@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 const Article = props => {
-  const { children, theme } = props;
+  const { children } = props;
 
   return (
     <article className="article">{children}</article>
@@ -11,7 +11,6 @@ const Article = props => {
 
 Article.propTypes = {
   children: PropTypes.node.isRequired,
-  theme: PropTypes.object.isRequired
 };
 
 export default Article;

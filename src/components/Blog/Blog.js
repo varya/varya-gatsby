@@ -4,7 +4,7 @@ import React from "react";
 import Item from "./Item";
 
 const Blog = props => {
-  const { posts, theme } = props;
+  const { posts } = props;
 
   return (
       <main className="main">
@@ -16,7 +16,7 @@ const Blog = props => {
                 fields: { slug }
               }
             } = post;
-            return <Item key={slug} post={node} theme={theme} />;
+            return <Item key={slug} post={node} />;
           })}
         </ul>
       </main>
@@ -26,7 +26,6 @@ const Blog = props => {
 
 Blog.propTypes = {
   posts: PropTypes.array.isRequired,
-  theme: PropTypes.object.isRequired
 };
 
 export default Blog;

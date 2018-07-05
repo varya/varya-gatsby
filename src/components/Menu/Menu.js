@@ -66,7 +66,7 @@ class Menu extends React.Component {
             {this.items.map(item => {
               const Icon = item.icon
               return (
-                <MenuItem>
+                <MenuItem key={item.label}>
                   {Icon && <Icon />}
                   <MenuLink to={item.to}>
                     {item.label}

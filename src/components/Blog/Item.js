@@ -9,7 +9,6 @@ import React from "react";
 
 const Item = props => {
   const {
-    theme,
     post: {
       excerpt,
       fields: { slug, prefix },
@@ -51,7 +50,6 @@ const Item = props => {
 
 Item.propTypes = {
   post: PropTypes.object.isRequired,
-  theme: PropTypes.object.isRequired
 };
 
 export default Item;

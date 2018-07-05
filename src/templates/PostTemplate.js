@@ -1,12 +1,11 @@
 import PropTypes from "prop-types";
 import React from "react";
 
-require("prismjs/themes/prism-okaidia.css");
+import { Container, LeftSide, Content, RightSide } from "../components/Layout/Layout";
 
 import Seo from "../components/Seo";
 import Article from "../components/Article";
 import Post from "../components/Post";
-import { ThemeContext } from "../layouts";
 
 const PostTemplate = props => {
   const {
@@ -21,7 +20,8 @@ const PostTemplate = props => {
   } = props;
 
   return (
-      <div>
+      <Container>
+        <Content>
           <Article>
             <Post
               post={post}
@@ -31,10 +31,14 @@ const PostTemplate = props => {
               facebook={facebook}
             />
           </Article>
-        )}
+        </Content>
+        <RightSide>
+           Sidebar here
+        </RightSide>
+        <LeftSide>prompt</LeftSide>
 
       <Seo data={post} facebook={facebook} />
-    </div>
+    </Container>
   );
 };
 

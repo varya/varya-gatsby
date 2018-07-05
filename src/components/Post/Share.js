@@ -23,7 +23,6 @@ const PostShare = props => {
       frontmatter: { title },
       excerpt
     },
-    theme
   } = props;
 
   const url = config.siteUrl + config.pathPrefix + slug;
@@ -90,7 +89,6 @@ const PostShare = props => {
 
 PostShare.propTypes = {
   post: PropTypes.object.isRequired,
-  theme: PropTypes.object.isRequired
 };
 
 export default PostShare;
