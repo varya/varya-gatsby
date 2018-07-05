@@ -106,6 +106,8 @@
     "precss": "^3.1.2",
     "prettier": "^1.12.0",
     "sharp-cli": "^1.7.0",
+    "styled-components-breakpoint": "^2.1.0",
+    "styled-components-grid": "^2.1.0",
     "stylelint": "^9.2.1",
     "stylelint-config-css-modules": "^1.2.0",
     "stylelint-config-standard": "^18.2.0",
