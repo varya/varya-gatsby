@@ -1,49 +1,53 @@
 import Link from "gatsby-link";
 import PropTypes from "prop-types";
 import React from "react";
-import VisibilitySensor from "react-visibility-sensor";
+import styled from 'styled-components'
+import { grid } from 'styled-components-grid'
+import breakpoint from 'styled-components-breakpoint'
 
 import config from "../../../content/meta/config";
 import Menu from "../Menu";
+import Logo from "../Logo";
 
-import avatar from "../../images/jpg/avatar.jpg";
+
+const Container = styled.div`
+  ${grid({})}
+`
+
+const LeftSide = styled.div`
+  ${grid.unit({
+    size: {
+        desktop: 4 / 12
+    }
+  })}
+`
+const RightSide = styled.div`
+  ${grid.unit({
+    size: {
+        desktop: 8 / 12
+    }
+  })}
+`
 
 class Header extends React.Component {
-  state = {
-    fixed: false
-  };
-
-  visibilitySensorChange = val => {
-    if (val) {
-      this.setState({ fixed: false });
-    } else {
-      this.setState({ fixed: true });
-    }
-  };
 
   render() {
     const { pages, path } = this.props;
-    const { fixed } = this.state;
+
 
     return (
-      <div>
-        <header>
-          <Link to="/" className="logoType">
-            <div className="logo">
-              <img src={avatar} alt={config.siteTitle} />
-            </div>
-            <div className="type">
-              <h1>{config.headerTitle}</h1>
-              <h2>{config.headerSubTitle}</h2>
-            </div>
-          </Link>
-        </header>
-        <Menu
-          path={path}
-          pages={pages}
+      <Container>
+        <LeftSide>
+          <Logo/>
+        </LeftSide>
+        <RightSide>
+          <Menu
+            path={path}
+            pages={pages}
           />
+        </RightSide>
 
-      </div>
+      </Container>
     );
   }
 }
