@@ -9,16 +9,18 @@ const LogoContainer = styled.div`
   font-weight: bold;
 `;
 const LogoVar = styled.b`
-  color: ${colorScheme.highlightWarm};
+  color: ${colorScheme.primary};
+  font-family: 'Monaco';
   &:after {
     content: ' ';
   }
 `;
 const LogoYa = styled.b`
-  color: ${colorScheme.highlightCold};
+  color: ${colorScheme.highlight};
+  font-family: 'Monaco';
   &:after {
     content: ';';
-    color: grey;
+    color: ${colorScheme.shadow};
   }
 `;
 

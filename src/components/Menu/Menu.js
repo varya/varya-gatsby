@@ -32,7 +32,7 @@ const MenuItem = styled.li`
 `;
 
 const MenuLink = styled(Link)`
-  color: ${colorScheme.shoutWarm}
+  color: ${colorScheme.primary};
   font-weight: bold;
   text-decoration: none;
   margin-left: 0.25em;

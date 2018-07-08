@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 import Seo from "../components/Seo";
 import Article from "../components/Article";
-import Page from "../components/Page";
+import TextBlock from "../components/TextBlock";
 
 const PageTemplate = props => {
   const {
@@ -18,7 +18,7 @@ const PageTemplate = props => {
   return (
     <div>
       <Article>
-        <Page page={page} />
+        <TextBlock page={page} />
       </Article>
 
       <Seo data={page} facebook={facebook} />

@@ -2,11 +2,13 @@ import styled from 'styled-components'
 
 export const colorScheme = {
 
-    bright: '#F3E8C8',
-    highlightCold: '#38BCC3',
-    highlightWarm: '#E99644',
-    shoutWarm: '#CF4E1E',
-    extra: '#6FD2CF'
+    light: '#FFFFFF',
+    dark: '#17293E',
+    primary: '#EC4E4B',
+    secondary: '#85D8F3',
+    highlight: '#F8D179',
+    shadow: '#A9AAAD'
+
 
 }
 
