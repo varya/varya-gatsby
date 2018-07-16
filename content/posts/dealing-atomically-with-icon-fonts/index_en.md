@@ -3,6 +3,7 @@
 title: Dealing atomically with icon fonts
 
 date: 2015-11-10
+v2: true
 
 layout: post
 

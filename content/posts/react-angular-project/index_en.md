@@ -3,6 +3,7 @@
 title: Simple React Angular project
 
 date: 2016-05-19
+v2: true
 
 layout: post
 

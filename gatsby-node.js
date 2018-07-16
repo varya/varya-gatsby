@@ -15,8 +15,8 @@ exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
     const separtorIndex = ~slug.indexOf("--") ? slug.indexOf("--") : 0;
     const shortSlugStart = separtorIndex ? separtorIndex + 2 : 0;
 
-    let lang = 'en';
     // detect Node language
+    let lang = 'en';
     if (fileNode.base.endsWith('_ru.md')) {
       lang = 'ru';
     }
@@ -28,7 +28,7 @@ exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
 
     // only for posts
     // TODO: only for old posts
-    if (fileNode.sourceInstanceName === 'posts') {
+    if (fileNode.sourceInstanceName === 'posts' && ( node.frontmatter.v2 || node.frontmatter.old )) {
 
       let paths = fileNode.relativePath.split('index_en.md');
       if (paths[1] === '') {

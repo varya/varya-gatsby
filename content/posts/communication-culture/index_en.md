@@ -3,6 +3,7 @@
 title: Aspect of in-company communication for innovation
 
 date: 2018-01-11
+v2: true
 
 layout: post
 
