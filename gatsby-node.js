@@ -28,7 +28,9 @@ exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
 
     // only for posts
     // TODO: only for old posts
-    if (fileNode.sourceInstanceName === 'posts' && ( node.frontmatter.v2 || node.frontmatter.old )) {
+    if (fileNode.sourceInstanceName === 'posts') {
+
+      if (node.frontmatter.v2 || node.frontmatter.old) {
 
       let paths = fileNode.relativePath.split('index_en.md');
       if (paths[1] === '') {
@@ -38,9 +40,11 @@ exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
       if (paths[1] === '') {
         slug = `ru/posts/${paths[0]}`
       }
+      } else {
+        slug = `posts${slug}`
+      }
 
     }
-
 
     createNodeField({
       node,
