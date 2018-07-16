@@ -1,7 +1,5 @@
 import FaArrowRight from "react-icons/lib/fa/arrow-right";
 import FaCalendar from "react-icons/lib/fa/calendar";
-import FaTag from "react-icons/lib/fa/tag";
-import FaUser from "react-icons/lib/fa/user";
 import Img from "gatsby-image";
 import Link from "gatsby-link";
 import PropTypes from "prop-types";
@@ -25,9 +23,9 @@ const Item = props => {
   return (
       <li>
         <Link to={`/${slug}`} key={slug} className="link">
-          <h1>
-            {title} <FaArrowRight className="arrow" />
-          </h1>
+          <h3>
+            {title}
+          </h3>
           <p className="meta">
             <span>
               <FaCalendar size={18} /> {date}
