@@ -34,7 +34,6 @@ const PostTemplate = props => {
           </Article>
         </Content>
         <RightSide>
-           Sidebar here
         </RightSide>
         <LeftSide>
           <Prompt />

@@ -1,11 +1,16 @@
 import PropTypes from "prop-types";
 import React from "react";
 
+import { Container, LeftSide, Content, RightSide } from "../components/Layout/Layout";
+import Prompt from "../components/Prompt";
+
 class IndexPage extends React.Component {
 
   render() {
 
     return (
+      <Container>
+        <Content>
 <div><p>I am a design systems specialist and a front-end developer originally from the Utmost North
 (<a href="http://maps.yandex.com/-/CVR3nIPf">Petrozavodsk</a>,
 Karelia); currently living in Helsinki
@@ -39,6 +44,12 @@ articles, projects and presentations.</p>
 <li><a href="http://www.linkedin.com/pub/varvara-stepanova/30/72a/96b">LinkedIn</a></li>
 </ul>
 </div>
+      </Content>
+      <RightSide></RightSide>
+      <LeftSide>
+        <Prompt />
+      </LeftSide>
+    </Container>
     );
   }
 }

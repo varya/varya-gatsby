@@ -32,7 +32,7 @@ export default BlogPage;
 export const guery = graphql`
   query BlogQuery {
     posts: allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "//posts/.*/" }, fields: { lang: {eq: "en" }} }
+      filter: { fileAbsolutePath: { regex: "//posts/.*/" }, fields: { lang: {eq: "en" } } }
       sort: { fields: [frontmatter___date], order: DESC }
     ) {
       edges {

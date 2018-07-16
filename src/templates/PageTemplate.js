@@ -1,8 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+import { Container, LeftSide, Content, RightSide } from "../components/Layout/Layout";
+
 import Article from "../components/Article";
 import TextBlock from "../components/TextBlock";
+import Prompt from "../components/Prompt";
 
 const PageTemplate = props => {
   const {
@@ -12,11 +15,17 @@ const PageTemplate = props => {
   } = props;
 
   return (
-    <div>
-      <Article>
-        <TextBlock title={page.frontmatter.title} html={page.html} />
-      </Article>
-    </div>
+    <Container>
+      <Content>
+        <Article>
+          <TextBlock title={page.frontmatter.title} html={page.html} />
+        </Article>
+      </Content>
+      <RightSide></RightSide>
+      <LeftSide>
+        <Prompt />
+      </LeftSide>
+    </Container>
   );
 };
 

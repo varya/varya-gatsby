@@ -13,9 +13,9 @@ const Item = props => {
       frontmatter: {
         title,
         date,
-        cover: {
+        /*cover: {
           children: [{ sizes }]
-        }
+        }*/
       }
     }
   } = props;
