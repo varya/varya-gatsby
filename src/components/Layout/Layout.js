@@ -3,6 +3,8 @@ import styled from 'styled-components'
 import { grid } from 'styled-components-grid'
 import breakpoint from 'styled-components-breakpoint'
 
+import Prompt from "../Prompt";
+
 export const Container = styled.div`
   ${grid({})}
 `
@@ -61,7 +63,7 @@ export default class Layout extends Component {
            Sidebar here
         </RightSide>
         <LeftSide>
-         Prompt
+         <Prompt />
         </LeftSide>
       </Container>
     )

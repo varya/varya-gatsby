@@ -5,6 +5,7 @@ import { Container, LeftSide, Content, RightSide } from "../components/Layout/La
 
 import Article from "../components/Article";
 import Post from "../components/Post";
+import Prompt from "../components/Prompt";
 
 const PostTemplate = props => {
   const {
@@ -34,7 +35,9 @@ const PostTemplate = props => {
         <RightSide>
            Sidebar here
         </RightSide>
-        <LeftSide>prompt</LeftSide>
+        <LeftSide>
+          <Prompt />
+        </LeftSide>
     </Container>
   );
 };
