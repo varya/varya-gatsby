@@ -43,6 +43,14 @@ exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
         slug = `blog${slug}`
       }
 
+      // make excerpt
+      if (node.rawMarkdownBody) {
+        const excerpt = node.rawMarkdownBody.split('<excerpt/>');
+        if (excerpt[1]) {
+          node.excerpt = excerpt[0];
+        }
+      }
+
     }
 
     createNodeField({
