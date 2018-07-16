@@ -12,6 +12,8 @@ import Logo from "../Logo";
 
 const Container = styled.div`
   ${grid({})}
+  margin-top: 1em;
+  margin-bottom: 2em;
 `
 
 const LeftSide = styled.div`

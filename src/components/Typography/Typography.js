@@ -111,6 +111,7 @@ html, body {
 h1 {
   font-size: 2.4em;
   font-weight: 300;
+  margin-top: 0;
 
   &::after {
     content: '';
