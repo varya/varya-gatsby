@@ -5,9 +5,8 @@ import config from "../../../content/meta/config";
 
 const Seo = props => {
   const { data } = props;
-  console.log(data);
   const postTitle = ((data || {}).frontmatter || {}).title;
-  const postDescription = ((data || {}).frontmatter || {}).description || ((data || {}).frontmatter || {}).meta.desc;
+  const postDescription = ((data || {}).frontmatter || {}).description || (((data || {}).frontmatter || {}).meta || {}).desc;
   const postCover = ((data || {}).frontmatter || {}).cover;
   const postSlug = ((data || {}).fields || {}).slug;
 
