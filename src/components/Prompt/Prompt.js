@@ -63,7 +63,8 @@ const Prompt = props => {
     <Container>
       <List>
         <Item>
-          {data.map(item => <Icon 
+          {data.map(item => <Icon
+            key={item.href}
             target="_blank"
             { ...item }
               />)}
