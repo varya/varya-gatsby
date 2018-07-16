@@ -54,7 +54,7 @@ export const postQuery = graphql`
       }
       frontmatter {
         title
-        author
+        date(formatString: "DD MMMM YYYY")
         category
         cover {
           childImageSharp {

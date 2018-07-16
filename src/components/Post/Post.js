@@ -11,7 +11,7 @@ const Post = props => {
     post: {
       html,
       fields: { prefix, slug },
-      frontmatter: { title, category }
+      frontmatter: { title, category, date }
     },
     authornote,
     next: nextPost,

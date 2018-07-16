@@ -14,8 +14,7 @@ const Item = props => {
       fields: { slug, prefix },
       frontmatter: {
         title,
-        category,
-        author,
+        date,
         /*cover: {
           children: [{ sizes }]
         }*/
@@ -25,22 +24,14 @@ const Item = props => {
 
   return (
       <li>
-        <Link to={slug} key={slug} className="link">
+        <Link to={`/${slug}`} key={slug} className="link">
           <h1>
             {title} <FaArrowRight className="arrow" />
           </h1>
           <p className="meta">
             <span>
-              <FaCalendar size={18} /> {prefix}
+              <FaCalendar size={18} /> {date}
             </span>
-            <span>
-              <FaUser size={18} /> {author}
-            </span>
-            {category && (
-              <span>
-                <FaTag size={18} /> {category}
-              </span>
-            )}
           </p>
           <p>{excerpt}</p>
         </Link>
