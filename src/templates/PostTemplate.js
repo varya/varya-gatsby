@@ -10,7 +10,10 @@ const PostTemplate = props => {
   const {
     data: {
       post,
-      authornote: { html: authorNote }
+      authornote: { html: authorNote },
+      site: {
+        siteMetadata
+      }
     },
     pathContext: { next, prev }
   } = props;
@@ -24,6 +27,7 @@ const PostTemplate = props => {
               next={next}
               prev={prev}
               authornote={authorNote}
+              siteMetadata={siteMetadata}
             />
           </Article>
         </Content>
@@ -51,15 +55,23 @@ export const postQuery = graphql`
       fields {
         slug
         prefix
+        disqusIdentifier
       }
       frontmatter {
         title
         date(formatString: "DD MMMM YYYY")
+        v2
+        old
       }
     }
     authornote: markdownRemark(id: { regex: "/author/" }) {
       id
       html
+    }
+    site {
+      siteMetadata {
+        siteUrl
+      }
     }
   }
 `;

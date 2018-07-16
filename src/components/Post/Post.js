@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import Meta from "./Meta";
 import NextPrev from "./NextPrev";
 import TextBlock from "../TextBlock";
+import Comments from "../Comments";
 
 const Post = props => {
   const {
@@ -21,6 +22,7 @@ const Post = props => {
   return (
     <div>
       <TextBlock title={title} html={html} />
+      <Comments {...props} />
     </div>
   );
 };

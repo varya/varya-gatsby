@@ -27,21 +27,20 @@ exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
     });
 
     // only for posts
-    // TODO: only for old posts
     if (fileNode.sourceInstanceName === 'posts') {
 
       if (node.frontmatter.v2 || node.frontmatter.old) {
 
-      let paths = fileNode.relativePath.split('index_en.md');
-      if (paths[1] === '') {
-        slug = `en/posts/${paths[0]}`
-      }
-      paths = fileNode.relativePath.split('index_ru.md');
-      if (paths[1] === '') {
-        slug = `ru/posts/${paths[0]}`
-      }
+        let paths = fileNode.relativePath.split('index_en.md');
+        if (paths[1] === '') {
+          slug = `en/posts/${paths[0]}`
+        }
+        paths = fileNode.relativePath.split('index_ru.md');
+        if (paths[1] === '') {
+          slug = `ru/posts/${paths[0]}`
+        }
       } else {
-        slug = `posts${slug}`
+        slug = `blog${slug}`
       }
 
     }
@@ -56,6 +55,23 @@ exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
       name: `prefix`,
       value: separtorIndex ? slug.substring(1, separtorIndex) : ""
     });
+
+    let disqusIdentifier = slug.split('/').filter(item => item != '');
+    if (node.frontmatter.v2) {
+      if (disqusIdentifier[0] === 'en' || disqusIdentifier[0] === 'ru') {
+        disqusIdentifier.shift();
+      }
+      disqusIdentifier.push('index');
+      disqusIdentifier.push(lang);
+    }
+    disqusIdentifier = disqusIdentifier.join('-');
+
+    createNodeField({
+      node,
+      name: `disqusIdentifier`,
+      value: disqusIdentifier
+    });
+
   }
 };
 
@@ -81,6 +97,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
                     slug
                     prefix
                     lang
+                    disqusIdentifier
                   }
                   frontmatter {
                     title
