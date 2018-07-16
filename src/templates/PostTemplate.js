@@ -55,14 +55,6 @@ export const postQuery = graphql`
       frontmatter {
         title
         date(formatString: "DD MMMM YYYY")
-        category
-        cover {
-          childImageSharp {
-            resize(width: 300) {
-              src
-            }
-          }
-        }
       }
     }
     authornote: markdownRemark(id: { regex: "/author/" }) {

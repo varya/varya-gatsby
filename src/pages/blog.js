@@ -32,7 +32,7 @@ export default BlogPage;
 export const guery = graphql`
   query BlogQuery {
     posts: allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "//posts/.*/" } }
+      filter: { fileAbsolutePath: { regex: "//posts/.*/" }, fields: { lang: {eq: "en" }} }
       sort: { fields: [frontmatter___date], order: DESC }
     ) {
       edges {
@@ -44,17 +44,7 @@ export const guery = graphql`
           }
           frontmatter {
             title
-            category
             date(formatString: "DD MMMM YYYY")
-            cover {
-              children {
-                ... on ImageSharp {
-                  sizes(maxWidth: 800, maxHeight: 360) {
-                    ...GatsbyImageSharpSizes_withWebp
-                  }
-                }
-              }
-            }
           }
         }
       }

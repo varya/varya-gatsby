@@ -15,6 +15,17 @@ exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
     const separtorIndex = ~slug.indexOf("--") ? slug.indexOf("--") : 0;
     const shortSlugStart = separtorIndex ? separtorIndex + 2 : 0;
 
+    let lang = 'en';
+    // detect Node language
+    if (fileNode.base.endsWith('_ru.md')) {
+      lang = 'ru';
+    }
+    createNodeField({
+      node,
+      name: `lang`,
+      value: lang
+    });
+
     // only for posts
     // TODO: only for old posts
     if (fileNode.sourceInstanceName === 'posts') {
@@ -50,7 +61,6 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
   return new Promise((resolve, reject) => {
     const postTemplate = path.resolve("./src/templates/PostTemplate.js");
     const pageTemplate = path.resolve("./src/templates/PageTemplate.js");
-    const categoryTemplate = path.resolve("./src/templates/CategoryTemplate.js");
     resolve(
       graphql(
         `
@@ -66,10 +76,10 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
                   fields {
                     slug
                     prefix
+                    lang
                   }
                   frontmatter {
                     title
-                    category
                   }
                 }
               }
@@ -83,32 +93,6 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
         }
 
         const items = result.data.allMarkdownRemark.edges;
-
-        // Create category list
-        const categorySet = new Set();
-        items.forEach(edge => {
-          const {
-            node: {
-              frontmatter: { category }
-            }
-          } = edge;
-
-          if (category && category !== null) {
-            categorySet.add(category);
-          }
-        });
-
-        // Create category pages
-        const categoryList = Array.from(categorySet);
-        categoryList.forEach(category => {
-          createPage({
-            path: `/category/${_.kebabCase(category)}/`,
-            component: categoryTemplate,
-            context: {
-              category
-            }
-          });
-        });
 
         // Create posts
         const posts = items.filter(item => /posts/.test(item.node.id));
