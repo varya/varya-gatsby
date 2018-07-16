@@ -3,6 +3,7 @@ import React from "react";
 
 import { Container, LeftSide, Content, RightSide } from "../components/Layout/Layout";
 
+import Seo from "../components/Seo";
 import Article from "../components/Article";
 import Post from "../components/Post";
 import Prompt from "../components/Prompt";
@@ -38,6 +39,7 @@ const PostTemplate = props => {
         <LeftSide>
           <Prompt />
         </LeftSide>
+      <Seo data={post} />
     </Container>
   );
 };
@@ -66,6 +68,16 @@ export const postQuery = graphql`
         v2
         old
         tumblr
+        meta {
+          desc
+        }
+        cover {
+          childImageSharp {
+            resize(width: 300) {
+              src
+            }
+          }
+        }
       }
     }
     authornote: markdownRemark(id: { regex: "/author/" }) {

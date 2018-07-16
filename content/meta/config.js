@@ -1,17 +1,14 @@
 module.exports = {
-  siteTitle: "HeroBlog - a GatsbyJS starter", // <title>
-  shortSiteTitle: "HeroBlog - GatsbyJS starter", // <title> ending for posts and pages
-  siteDescription: "HeroBlog is a GatsbyJS starter.",
+  siteTitle: "Varya.me — design and development", // <title>
+  shortSiteTitle: "Varya.me", // <title> ending for posts and pages
+  siteDescription: "Varya.me — design and development",
   siteUrl: "http://varya.me/",
   pathPrefix: "",
   siteImage: "preview.jpg",
   siteLanguage: "en",
   // author
-  authorName: "greg lobinski",
-  authorTwitterAccount: "greglobinski",
-  // info
-  headerTitle: "greg lobinski",
-  headerSubTitle: "presents another one GatsbyJS starter",
+  authorName: "Varya Stepanova",
+  authorTwitterAccount: "varya_en",
   // manifest.json
   manifestName: "HeroBlog - a GatsbyJS starter",
   manifestShortName: "HeroBlog", // max 12 characters
@@ -21,8 +18,8 @@ module.exports = {
   manifestDisplay: "standalone",
   // social
   authorSocialLinks: [
-    { name: "github", url: "https://github.com/greglobinski" },
-    { name: "twitter", url: "https://twitter.com/greglobinski" },
-    { name: "facebook", url: "http://facebook.com/greglobinski" }
+    { name: "github", url: "https://github.com/varya" },
+    { name: "twitter", url: "https://twitter.com/varya_en" },
+    { name: "facebook", url: "http://facebook.com/varyastepanova" }
   ]
 };
