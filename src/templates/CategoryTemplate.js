@@ -2,7 +2,6 @@ import FaTag from "react-icons/lib/fa/tag";
 import PropTypes from "prop-types";
 import React from "react";
 
-import Seo from "../components/Seo";
 import { ThemeContext } from "../layouts";
 import Article from "../components/Article";
 import Headline from "../components/Article/Headline";
@@ -12,19 +11,15 @@ const CategoryTemplate = props => {
   const {
     pathContext: { category },
     data: {
-      allMarkdownRemark: { totalCount, edges },
-      site: {
-        siteMetadata: { facebook }
-      }
+      allMarkdownRemark: { totalCount, edges }
     }
   } = props;
 
   return (
     <div>
-      category template
-          <Article theme={theme}>
+          <Article>
             <header>
-              <Headline theme={theme}>
+              <Headline>
                 <span>Posts in category</span> <FaTag />
                 {category}
               </Headline>
@@ -35,11 +30,9 @@ const CategoryTemplate = props => {
                   : ""}{" "}
                 in the category.
               </p>
-              <List edges={edges} theme={theme} />
+              <List edges={edges}/>
             </header>
           </Article>
-
-      <Seo facebook={facebook} />
      </div>
   );
 };
@@ -71,13 +64,6 @@ export const categoryQuery = graphql`
             title
             category
           }
-        }
-      }
-    }
-    site {
-      siteMetadata {
-        facebook {
-          appId
         }
       }
     }

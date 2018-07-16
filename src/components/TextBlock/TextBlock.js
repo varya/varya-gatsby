@@ -5,10 +5,8 @@ import Typography from "../Typography";
 
 const TextBlock = props => {
   const {
-    page: {
-      html,
-      frontmatter: { title }
-    }
+    title,
+    html
   } = props;
 
   return (
@@ -22,7 +20,8 @@ const TextBlock = props => {
 };
 
 TextBlock.propTypes = {
-  page: PropTypes.object.isRequired
+  title: PropTypes.object.isRequired,
+  html: PropTypes.object.isRequired
 };
 
 export default TextBlock;

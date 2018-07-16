@@ -1,27 +1,21 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import Seo from "../components/Seo";
 import Article from "../components/Article";
 import TextBlock from "../components/TextBlock";
 
 const PageTemplate = props => {
   const {
     data: {
-      page,
-      site: {
-        siteMetadata: { facebook }
-      }
+      page
     }
   } = props;
 
   return (
     <div>
       <Article>
-        <TextBlock page={page} />
+        <TextBlock title={page.frontmatter.title} html={page.html} />
       </Article>
-
-      <Seo data={page} facebook={facebook} />
     </div>
   );
 };
@@ -40,13 +34,6 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
-      }
-    }
-    site {
-      siteMetadata {
-        facebook {
-          appId
-        }
       }
     }
   }

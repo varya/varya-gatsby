@@ -3,7 +3,6 @@ import React from "react";
 
 import { Container, LeftSide, Content, RightSide } from "../components/Layout/Layout";
 
-import Seo from "../components/Seo";
 import Article from "../components/Article";
 import Post from "../components/Post";
 
@@ -11,10 +10,7 @@ const PostTemplate = props => {
   const {
     data: {
       post,
-      authornote: { html: authorNote },
-      site: {
-        siteMetadata: { facebook }
-      }
+      authornote: { html: authorNote }
     },
     pathContext: { next, prev }
   } = props;
@@ -28,7 +24,6 @@ const PostTemplate = props => {
               next={next}
               prev={prev}
               authornote={authorNote}
-              facebook={facebook}
             />
           </Article>
         </Content>
@@ -36,8 +31,6 @@ const PostTemplate = props => {
            Sidebar here
         </RightSide>
         <LeftSide>prompt</LeftSide>
-
-      <Seo data={post} facebook={facebook} />
     </Container>
   );
 };
@@ -75,13 +68,6 @@ export const postQuery = graphql`
     authornote: markdownRemark(id: { regex: "/author/" }) {
       id
       html
-    }
-    site {
-      siteMetadata {
-        facebook {
-          appId
-        }
-      }
     }
   }
 `;

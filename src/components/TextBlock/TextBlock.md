@@ -17,6 +17,6 @@ const page = {
   </p>`
 };
 
-<TextBlock page={page} />
+<TextBlock title={page.frontmatter.title} html={page.html} />
 
 ```

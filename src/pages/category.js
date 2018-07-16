@@ -6,15 +6,11 @@ import { ThemeContext } from "../layouts";
 import Article from "../components/Article/";
 import Headline from "../components/Article/Headline";
 import List from "../components/List";
-import Seo from "../components/Seo";
 
 const CategoryPage = props => {
   const {
     data: {
-      posts: { edges: posts },
-      site: {
-        siteMetadata: { facebook }
-      }
+      posts: { edges: posts }
     }
   } = props;
 
@@ -58,8 +54,6 @@ const CategoryPage = props => {
             ))}
           </Article>
         )}
-
-      <Seo facebook={facebook} />
     </div>
   );
 };
@@ -98,13 +92,6 @@ export const guery = graphql`
               }
             }
           }
-        }
-      }
-    }
-    site {
-      siteMetadata {
-        facebook {
-          appId
         }
       }
     }

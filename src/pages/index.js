@@ -2,17 +2,13 @@ import PropTypes from "prop-types";
 import React from "react";
 
 import Blog from "../components/Blog";
-import Seo from "../components/Seo";
 
 class IndexPage extends React.Component {
 
   render() {
     const {
       data: {
-        posts: { edges: posts = [] },
-        site: {
-          siteMetadata: { facebook }
-        }
+        posts: { edges: posts = [] }
       }
     } = this.props;
 
@@ -20,8 +16,6 @@ class IndexPage extends React.Component {
       <div>
 
         <Blog posts={posts} />
-
-        <Seo facebook={facebook} />
 
       </div>
     );
@@ -62,13 +56,6 @@ export const guery = graphql`
               }
             }
           }
-        }
-      }
-    }
-    site {
-      siteMetadata {
-        facebook {
-          appId
         }
       }
     }

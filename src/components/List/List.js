@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import Link from "gatsby-link";
 
 const List = props => {
-  const { edges, theme } = props;
+  const { edges } = props;
 
   return (
       <ul>
@@ -27,8 +27,7 @@ const List = props => {
 };
 
 List.propTypes = {
-  edges: PropTypes.array.isRequired,
-  theme: PropTypes.object.isRequired
+  edges: PropTypes.array.isRequired
 };
 
 export default List;

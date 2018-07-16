@@ -7,15 +7,12 @@ import FaUser from "react-icons/lib/fa/user";
 import FaTag from "react-icons/lib/fa/tag";
 
 const Meta = props => {
-  const { prefix, author: authorName, category } = props;
+  const { prefix, category } = props;
 
   return (
     <p className="meta">
       <span>
         <FaCalendar size={18} /> {prefix}
-      </span>
-      <span>
-        <FaUser size={18} /> {authorName}
       </span>
       {category && (
         <span>
@@ -30,7 +27,6 @@ const Meta = props => {
 
 Meta.propTypes = {
   prefix: PropTypes.string.isRequired,
-  author: PropTypes.string.isRequired,
   category: PropTypes.string,
 };
 
