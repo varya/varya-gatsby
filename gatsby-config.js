@@ -2,7 +2,7 @@ require("dotenv").config();
 const config = require("./content/meta/config");
 
 const query = `{
-  allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/posts|pages/[0-9]+.*--/"}}) {
+  allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/posts|pages|life/[0-9]+.*--/"}}) {
     edges {
       node {
         objectID: fileAbsolutePath
@@ -53,6 +53,13 @@ module.exports = {
       options: {
         path: `${__dirname}/content/posts/`,
         name: "posts"
+      }
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/life/`,
+        name: "life"
       }
     },
     {

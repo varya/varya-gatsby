@@ -27,17 +27,17 @@ exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
     });
 
     // only for posts
-    if (fileNode.sourceInstanceName === 'posts') {
+    if (fileNode.sourceInstanceName === 'posts' || fileNode.sourceInstanceName === 'life') {
 
       if (node.frontmatter.v2 || node.frontmatter.old) {
 
         let paths = fileNode.relativePath.split('index_en.md');
         if (paths[1] === '') {
-          slug = `en/posts/${paths[0]}`
+          slug = `en/${fileNode.sourceInstanceName}/${paths[0]}`
         }
         paths = fileNode.relativePath.split('index_ru.md');
         if (paths[1] === '') {
-          slug = `ru/posts/${paths[0]}`
+          slug = `ru/${fileNode.sourceInstanceName}/${paths[0]}`
         }
       } else {
         slug = `blog${slug}`
@@ -94,7 +94,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
         `
           {
             allMarkdownRemark(
-              filter: { id: { regex: "//posts|pages//" } }
+              filter: { id: { regex: "//posts|pages|life//" } }
               sort: { fields: [fields___prefix], order: DESC }
               limit: 1000
             ) {
@@ -129,6 +129,24 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
           const slug = node.fields.slug;
           const next = index === 0 ? undefined : posts[index - 1].node;
           const prev = index === posts.length - 1 ? undefined : posts[index + 1].node;
+
+          createPage({
+            path: slug,
+            component: postTemplate,
+            context: {
+              slug,
+              prev,
+              next
+            }
+          });
+        });
+
+        // Create life  posts
+        const lifePosts = items.filter(item => /life/.test(item.node.id));
+        lifePosts.forEach(({ node }, index) => {
+          const slug = node.fields.slug;
+          const next = index === 0 ? undefined : lifePosts[index - 1].node;
+          const prev = index === lifePosts.length - 1 ? undefined : lifePosts[index + 1].node;
 
           createPage({
             path: slug,

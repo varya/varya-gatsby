@@ -65,6 +65,7 @@ export const postQuery = graphql`
         date(formatString: "DD MMMM YYYY")
         v2
         old
+        tumblr
       }
     }
     authornote: markdownRemark(id: { regex: "/author/" }) {

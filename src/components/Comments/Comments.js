@@ -14,6 +14,9 @@ const Comments = props => {
         slug,
         title,
         disqusIdentifier
+      },
+      frontmatter: {
+        tumblr,
       }
     },
     siteMetadata: {
@@ -21,7 +24,7 @@ const Comments = props => {
     }
   } = props;
 
-  const disqusShortname = 'varya';
+  const disqusShortname = tumblr ? 'varyadaily' : 'varya';
 
 
   const disqusConfig = {
