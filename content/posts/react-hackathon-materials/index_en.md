@@ -4,6 +4,7 @@ title: Materials for your React hackathon
 
 date: 2016-04-16
 v2: true
+cover: thumb.png
 
 layout: post
 

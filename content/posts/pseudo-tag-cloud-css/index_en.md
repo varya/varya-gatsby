@@ -4,6 +4,7 @@ title: Tag cloud of random sizes in pure CSS
 
 date: 2015-11-02
 v2: true
+cover: thumb.png
 
 layout: post
 

@@ -4,6 +4,7 @@ title: Visual diffs for the images in a git repo
 
 date: 2016-03-18
 v2: true
+cover: thumb.png
 
 layout: post
 

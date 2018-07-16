@@ -4,6 +4,7 @@ title: What   makes   entrepreneurs   entrepreneurial?
 
 date: 2018-01-04
 v2: true
+cover: thumb.jpg
 
 layout: post
 

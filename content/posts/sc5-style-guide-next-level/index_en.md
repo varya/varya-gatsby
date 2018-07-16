@@ -4,6 +4,7 @@ title: Living SC5 Styleguide, the next level
 
 date: 2016-05-23
 v2: true
+cover: thumb.png
 
 layout: post
 
